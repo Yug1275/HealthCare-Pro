@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Patients - HealthCare Pro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./images/Healthcarelogo_2.png" alt="HealthCare Pro Logo">
+                <h1><a href="index.html" class="nav-link">HealthCare Pro</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="doctor-dashboard.html" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="doctor-appointments.html" class="nav-link">Appointments</a></li>
+                <li class="nav-item"><a href="doctor-patients.html" class="nav-link active">Patients</a></li>
+                <li class="nav-item"><a href="#" class="nav-link logout-link">Logout</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>My Patients</h1>
+                <p>View and manage your patient records</p>
+            </div>
+
+            <div class="emr-controls">
+                <div class="search-filter">
+                    <input type="text" id="searchPatients" class="search-input" placeholder="Search patients...">
+                    <select id="filterLastVisit" class="filter-select">
+                        <option value="">All Patients</option>
+                        <option value="recent">Recent Visits (Last 30 days)</option>
+                        <option value="older">Older Visits (30+ days)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="records-container">
+                <table class="records-table">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('name')">Patient Name <span class="sort-arrow">↕</span></th>
+                            <th onclick="sortTable('email')">Email <span class="sort-arrow">↕</span></th>
+                            <th onclick="sortTable('phone')">Phone <span class="sort-arrow">↕</span></th>
+                            <th onclick="sortTable('lastVisit')">Last Visit <span class="sort-arrow">↕</span></th>
+                            <th onclick="sortTable('records')">Records <span class="sort-arrow">↕</span></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientsTableBody">
+                        <!-- Patients will be loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="noPatients" class="no-records" style="display: none;">
+                <h3>No Patients Found</h3>
+                <p>You don't have any patients yet.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HealthCare Pro</h3>
+                    <p>Providing quality healthcare services with cutting-edge technology and compassionate care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="doctor-dashboard.html">Dashboard</a></li>
+                        <li><a href="doctor-appointments.html">Appointments</a></li>
+                        <li><a href="doctor-patients.html">Patients</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@healthcarepro.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Address: 123 Health Street, Medical City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthCare Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+

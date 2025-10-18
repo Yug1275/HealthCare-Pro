@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMR Records - HealthCare Pro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./images/Healthcarelogo_2.png" alt="HealthCare Pro Logo">
+                <h1><a href="index.html" class="nav-link">HealthCare Pro</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="book-appointment.html" class="nav-link">Book Appointment</a></li>
+                <li class="nav-item"><a href="emr-records.html" class="nav-link active">EMR Records</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link logout-link">Logout</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="emr-main">
+        <div class="container">
+            <div class="emr-header">
+                <h1>Electronic Medical Records</h1>
+                <p class="welcome-message">Welcome, <span class="user-name">Patient</span>! Access and manage your complete medical history</p>
+            </div>
+
+            <div class="emr-controls">
+                <div class="search-filter">
+                    <input type="text" id="searchRecords" class="search-input" placeholder="Search records...">
+                    <select id="filterDoctor" class="filter-select">
+                        <option value="">All Doctors</option>
+                        <option value="Dr. Sarah Johnson">Dr. Sarah Johnson</option>
+                        <option value="Dr. Michael Chen">Dr. Michael Chen</option>
+                        <option value="Dr. Emily Rodriguez">Dr. Emily Rodriguez</option>
+                        <option value="Dr. David Thompson">Dr. David Thompson</option>
+                    </select>
+                    <select id="filterYear" class="filter-select">
+                        <option value="">All Years</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                    <select id="sortBy" class="sort-select">
+                        <option value="date-desc">Sort by Date (Newest)</option>
+                        <option value="date-asc">Sort by Date (Oldest)</option>
+                        <option value="doctor">Sort by Doctor</option>
+                        <option value="diagnosis">Sort by Diagnosis</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="records-container">
+                <table class="records-table">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('date')">Date <span class="sort-arrow">↕</span></th>
+                            <th onclick="sortTable('doctor')">Doctor <span class="sort-arrow">↕</span></th>
+                            <th onclick="sortTable('diagnosis')">Diagnosis <span class="sort-arrow">↕</span></th>
+                            <th onclick="sortTable('prescription')">Prescription <span class="sort-arrow">↕</span></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recordsTableBody">
+                        <!-- Records will be loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="noRecords" class="no-records" style="display: none;">
+                <h3>No Medical Records Found</h3>
+                <p>You don't have any medical records yet. Your records will appear here after your first appointment.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Record Details Modal -->
+    <div id="recordModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Medical Record Details</h2>
+            <div id="recordDetails">
+                <!-- Record details will be loaded here -->
+            </div>
+            <div class="form-actions">
+                <button class="cancel-button" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HealthCare Pro</h3>
+                    <p>Providing quality healthcare services with cutting-edge technology and compassionate care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="book-appointment.html">Book Appointment</a></li>
+                        <li><a href="emr-records.html">EMR Records</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@healthcarepro.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Address: 123 Health Street, Medical City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthCare Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

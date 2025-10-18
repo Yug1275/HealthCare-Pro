@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HealthCare Pro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./images/Healthcarelogo_2.png" alt="HealthCare Pro Logo">
+                <h1><a href="index.html" class="nav-link">HealthCare Pro</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="signup.html" class="nav-link">Sign Up</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link active">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-header">
+                <h1>Login to HealthCare Pro</h1>
+                <p>Access your healthcare dashboard and manage your medical records</p>
+            </div>
+
+            <div class="auth-form-container">
+                <div class="role-title">
+                    <h3>Select Your Role</h3>
+                </div>
+                <div class="role-buttons">
+                    <button class="role-button" data-role="patient" onclick="selectRole('patient')">
+                        <img src="images/patient.jpg" alt="Patient">
+                        <div>Patient</div>
+                    </button>
+                    <button class="role-button" data-role="doctor" onclick="selectRole('doctor')">
+                        <img src="images/doctor.jpg" alt="Doctor">
+                        <div>Doctor</div>
+                    </button>
+                </div>
+
+                <form id="patient-login-form" class="auth-form" data-role="patient" style="display: none;">
+                    <div class="form-group">
+                        <label for="patientLoginEmail">Email Address</label>
+                        <input type="email" id="patientLoginEmail" name="email" required>
+                        <span class="error-message" data-for="patientLoginEmail"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientLoginPassword">Password</label>
+                        <input type="password" id="patientLoginPassword" name="password" required>
+                        <span class="error-message" data-for="patientLoginPassword"></span>
+                    </div>
+                    <button type="submit" class="auth-button">Login as Patient</button>
+                </form>
+
+                <form id="doctor-login-form" class="auth-form" data-role="doctor" style="display: none;">
+                    <div class="form-group">
+                        <label for="doctorLoginEmail">Email Address</label>
+                        <input type="email" id="doctorLoginEmail" name="email" required>
+                        <span class="error-message" data-for="doctorLoginEmail"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorLoginPassword">Password</label>
+                        <input type="password" id="doctorLoginPassword" name="password" required>
+                        <span class="error-message" data-for="doctorLoginPassword"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorSpecialization">Specialization</label>
+                        <select id="doctorSpecialization" name="specialization" required>
+                            <option value="">Select Specialization</option>
+                            <option value="cardiologist">Cardiologist</option>
+                            <option value="dentist">Dentist</option>
+                            <option value="dermatologist">Dermatologist</option>
+                            <option value="neurologist">Neurologist</option>
+                            <option value="orthopedist">Orthopedist</option>
+                            <option value="pediatrician">Pediatrician</option>
+                            <option value="psychiatrist">Psychiatrist</option>
+                            <option value="general">General Practitioner</option>
+                        </select>
+                        <span class="error-message" data-for="doctorSpecialization"></span>
+                    </div>
+                    <button type="submit" class="auth-button">Login as Doctor</button>
+                </form>
+
+
+                <input type="hidden" id="loginRole" name="role" value="">
+
+                <div class="login-link">
+                    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HealthCare Pro</h3>
+                    <p>Providing quality healthcare services with cutting-edge technology and compassionate care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@healthcarepro.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Address: 123 Health Street, Medical City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthCare Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

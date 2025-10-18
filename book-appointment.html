@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - HealthCare Pro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./images/Healthcarelogo_2.png" alt="HealthCare Pro Logo">
+                <h1><a href="index.html" class="nav-link">HealthCare Pro</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="book-appointment.html" class="nav-link active">Book Appointment</a></li>
+                <li class="nav-item"><a href="emr-records.html" class="nav-link">EMR Records</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link logout-link">Logout</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="appointment-main">
+        <div class="container">
+            <div class="appointment-header">
+                <h1>Book Your Appointment</h1>
+                <p>Schedule your healthcare appointment with our qualified medical professionals</p>
+            </div>
+
+            <div class="appointment-form-container">
+                <form id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientName">Patient Name *</label>
+                            <input type="text" id="patientName" name="patientName" required>
+                            <span class="error-message" data-for="patientName"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientEmail">Email Address *</label>
+                            <input type="email" id="patientEmail" name="patientEmail" required>
+                            <span class="error-message" data-for="patientEmail"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientPhone">Phone Number *</label>
+                            <input type="tel" id="patientPhone" name="patientPhone" required>
+                            <span class="error-message" data-for="patientPhone"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialization">Specialization *</label>
+                            <select id="specialization" name="specialization" required>
+                                <option value="">Select Specialization</option>
+                                <option value="cardiologist">Cardiologist</option>
+                                <option value="dentist">Dentist</option>
+                                <option value="dermatologist">Dermatologist</option>
+                                <option value="neurologist">Neurologist</option>
+                                <option value="orthopedist">Orthopedist</option>
+                                <option value="pediatrician">Pediatrician</option>
+                                <option value="psychiatrist">Psychiatrist</option>
+                                <option value="general">General Practitioner</option>
+                            </select>
+                            <span class="error-message" data-for="specialization"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="doctor">Select Doctor *</label>
+                            <select id="doctor" name="doctor" required>
+                                <option value="">Select Doctor</option>
+                            </select>
+                            <span class="error-message" data-for="doctor"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentDate">Preferred Date *</label>
+                            <input type="date" id="appointmentDate" name="appointmentDate" required>
+                            <span class="error-message" data-for="appointmentDate"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appointmentTime">Preferred Time *</label>
+                            <select id="appointmentTime" name="appointmentTime" required>
+                                <option value="">Select Time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="09:30">9:30 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="10:30">10:30 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="11:30">11:30 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="12:30">12:30 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="13:30">1:30 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="14:30">2:30 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="15:30">3:30 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="16:30">4:30 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
+                            <span class="error-message" data-for="appointmentTime"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Reason for Visit *</label>
+                            <input type="text" id="reason" name="reason" placeholder="Brief description of your concern" required>
+                            <span class="error-message" data-for="reason"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="additionalNotes">Additional Notes</label>
+                        <textarea id="additionalNotes" name="additionalNotes" rows="4" placeholder="Any additional information you'd like to share with the doctor"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">Book Appointment</button>
+                        <button type="reset" class="reset-button">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HealthCare Pro</h3>
+                    <p>Providing quality healthcare services with cutting-edge technology and compassionate care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="book-appointment.html">Book Appointment</a></li>
+                        <li><a href="emr-records.html">EMR Records</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@healthcarepro.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Address: 123 Health Street, Medical City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthCare Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+

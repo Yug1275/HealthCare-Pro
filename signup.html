@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - HealthCare Pro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./images/Healthcarelogo_2.png" alt="HealthCare Pro Logo">
+                <h1><a href="index.html" class="nav-link">HealthCare Pro</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="signup.html" class="nav-link active">Sign Up</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-header">
+                <h1>Join HealthCare Pro</h1>
+                <p>Create your account and start managing your healthcare journey</p>
+            </div>
+
+            <div class="auth-form-container">
+                <div class="role-title">
+                    <h3>Select Your Role</h3>
+                </div>
+                <div class="role-buttons">
+                    <button class="role-button" data-role="patient" onclick="selectRole('patient')">
+                        <img src="images/patient.jpg" alt="Patient">
+                        <div>Patient</div>
+                    </button>
+                    <button class="role-button" data-role="doctor" onclick="selectRole('doctor')">
+                        <img src="images/doctor.jpg" alt="Doctor">
+                        <div>Doctor</div>
+                    </button>
+                </div>
+
+                <form id="patient-form" class="auth-form" data-role="patient" style="display: none;">
+                    <div class="form-group">
+                        <label for="patientUsername">Full Name</label>
+                        <input type="text" id="patientUsername" name="username" required>
+                        <span class="error-message" data-for="patientUsername"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientEmail">Email Address</label>
+                        <input type="email" id="patientEmail" name="email" required>
+                        <span class="error-message" data-for="patientEmail"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientMobile">Mobile Number</label>
+                        <input type="tel" id="patientMobile" name="mobile" placeholder="+1 (555) 123-4567">
+                        <span class="error-message" data-for="patientMobile"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientPassword">Password</label>
+                        <input type="password" id="patientPassword" name="password" required>
+                        <span class="error-message" data-for="patientPassword"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientConfirmPassword">Confirm Password</label>
+                        <input type="password" id="patientConfirmPassword" name="confirmPassword" required>
+                        <span class="error-message" data-for="patientConfirmPassword"></span>
+                    </div>
+                    <button type="submit" class="auth-button">Sign Up as Patient</button>
+                </form>
+
+                <form id="doctor-form" class="auth-form" data-role="doctor" style="display: none;">
+                    <div class="form-group">
+                        <label for="doctorUsername">Full Name</label>
+                        <input type="text" id="doctorUsername" name="username" required>
+                        <span class="error-message" data-for="doctorUsername"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorEmail">Email Address</label>
+                        <input type="email" id="doctorEmail" name="email" required>
+                        <span class="error-message" data-for="doctorEmail"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorMobile">Mobile Number</label>
+                        <input type="tel" id="doctorMobile" name="mobile" placeholder="+1 (555) 123-4567">
+                        <span class="error-message" data-for="doctorMobile"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorSpecialization">Specialization</label>
+                        <select id="doctorSpecialization" name="specialization" required>
+                            <option value="">Select Specialization</option>
+                            <option value="cardiologist">Cardiologist</option>
+                            <option value="dentist">Dentist</option>
+                            <option value="dermatologist">Dermatologist</option>
+                            <option value="neurologist">Neurologist</option>
+                            <option value="orthopedist">Orthopedist</option>
+                            <option value="pediatrician">Pediatrician</option>
+                            <option value="psychiatrist">Psychiatrist</option>
+                            <option value="general">General Practitioner</option>
+                        </select>
+                        <span class="error-message" data-for="doctorSpecialization"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="officeHoursDays">Office Hours - Days</label>
+                        <select id="officeHoursDays" name="office_hours_days" required>
+                            <option value="">Select Working Days</option>
+                            <option value="Monday-Friday">Monday to Friday</option>
+                            <option value="Monday-Saturday">Monday to Saturday</option>
+                            <option value="Tuesday-Saturday">Tuesday to Saturday</option>
+                            <option value="Monday-Thursday">Monday to Thursday</option>
+                            <option value="Tuesday-Friday">Tuesday to Friday</option>
+                            <option value="Custom">Custom Days</option>
+                        </select>
+                        <span class="error-message" data-for="officeHoursDays"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="officeHoursTime">Office Hours - Time</label>
+                        <select id="officeHoursTime" name="office_hours_time" required>
+                            <option value="">Select Working Hours</option>
+                            <option value="9AM-5PM">9:00 AM - 5:00 PM</option>
+                            <option value="8AM-4PM">8:00 AM - 4:00 PM</option>
+                            <option value="10AM-6PM">10:00 AM - 6:00 PM</option>
+                            <option value="7AM-3PM">7:00 AM - 3:00 PM</option>
+                            <option value="9AM-7PM">9:00 AM - 7:00 PM</option>
+                            <option value="Custom">Custom Hours</option>
+                        </select>
+                        <span class="error-message" data-for="officeHoursTime"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorPassword">Password</label>
+                        <input type="password" id="doctorPassword" name="password" required>
+                        <span class="error-message" data-for="doctorPassword"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorConfirmPassword">Confirm Password</label>
+                        <input type="password" id="doctorConfirmPassword" name="confirmPassword" required>
+                        <span class="error-message" data-for="doctorConfirmPassword"></span>
+                    </div>
+                    <button type="submit" class="auth-button">Sign Up as Doctor</button>
+                </form>
+
+
+                <input type="hidden" id="signupRole" name="role" value="">
+
+                <div class="signup-link">
+                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HealthCare Pro</h3>
+                    <p>Providing quality healthcare services with cutting-edge technology and compassionate care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@healthcarepro.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Address: 123 Health Street, Medical City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthCare Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
