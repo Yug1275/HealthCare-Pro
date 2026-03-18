@@ -3,7 +3,7 @@
 $host = 'localhost';
 $dbname = 'healthcare_pro';
 $username = 'root';
-$password = 'Patelyug1275';
+$password = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
